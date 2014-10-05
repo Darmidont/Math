@@ -62,12 +62,12 @@ namespace Functions
 
         public static FunctionBase operator -(Constant a, Constant b)
         {
-            return new Constant(a.Calc() * b.Calc());
+            return new Constant(a.Calc() - b.Calc());
         }
 
         public static FunctionBase operator +(Constant a, Constant b)
         {
-            return new Constant(a.Calc() * b.Calc());
+            return new Constant(a.Calc() + b.Calc());
         }
 
         public static FunctionBase operator /(Constant a, Constant b)
@@ -82,18 +82,18 @@ namespace Functions
 
         public static FunctionBase operator -(double a, Constant b)
         {
-            return new Constant(a * b.Calc());
+            return new Constant(a - b.Calc());
         }
 
         public static FunctionBase operator +(double a, Constant b)
         {
-            return new Constant(a * b.Calc());
+            return new Constant(a + b.Calc());
         }
 
         public static FunctionBase operator /(double a, Constant b)
         {
             var denominator = b._value;
-            if (Math.Abs(0 - denominator) < 0.001)
+            if (Math.Abs(0 - denominator) < PredefinedConstants.MinComparedValue)
             {
                 throw new ArgumentException("Can't divide on zero");
             }

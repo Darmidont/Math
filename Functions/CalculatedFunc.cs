@@ -11,9 +11,14 @@ namespace Functions
         public abstract double Calc(double val);
 
         public readonly double Power;
-        protected CalculatedFunc(double power = 1)
+
+        public readonly double Coeff;
+
+        //protected CalculatedFunc(double coeff =1,  double power = 1)
+        protected CalculatedFunc(double coeff, double power)
         {
             Power = power;
+            Coeff = coeff;
         }
     }
 }

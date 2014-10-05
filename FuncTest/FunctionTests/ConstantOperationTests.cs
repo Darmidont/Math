@@ -37,41 +37,40 @@ namespace FuncTest.FunctionTests
             string dd = string.Empty;
         }
 
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantMultipleOperations()
-        //{
+        [Test]
+        public void ShouldReturnCorrectValueForConstantMultipleOperations()
+        {
+        }
 
-        //}
+        [Test]
+        public void ShouldReturnCorrectValueForConstantDivideOperations()
+        {
 
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantDivideOperations()
-        //{
+        }
 
-        //}
+        //
+        [Test]
+        public void ShouldReturnCorrectValueForConstantSumOperations1()
+        {
 
-        ////
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantSumOperations1()
-        //{
+        }
 
-        //}
+        [Test]
+        public void ShouldReturnCorrectValueForConstantSubstractOperations1()
+        {
 
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantSubstractOperations1()
-        //{
+        }
 
-        //}
+        [Test]
+        public void ShouldReturnCorrectValueForConstantMultipleOperations1()
+        {
 
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantMultipleOperations1()
-        //{
+        }
 
-        //}
+        [Test]
+        public void ShouldReturnCorrectValueForConstantDivideOperations1()
+        {
 
-        //[Test]
-        //public void ShouldReturnCorrectValueForConstantDivideOperations1()
-        //{
-
-        //}
+        }
     }
 }
