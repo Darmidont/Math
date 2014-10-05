@@ -2,7 +2,7 @@
 
 namespace Functions
 {
-    public class Constant : FunctionBase
+    public class Constant : ConstantFuncBase
     {
         private readonly double _value;
         public Constant(double val)
@@ -10,7 +10,7 @@ namespace Functions
             _value = val;
         }
 
-        public override double Calc(double val)
+        public override double Calc()
         {
             return _value;
         }
@@ -47,47 +47,47 @@ namespace Functions
                 return false;
             }
 
-            return _value.Equals(b.Calc(0));
+            return _value.Equals(b.Calc());
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return _value.GetHashCode();
         }
 
         public static FunctionBase operator *(Constant a, Constant b)
         {
-            return new Constant(a.Calc(0) * b.Calc(0));
+            return new Constant(a.Calc() * b.Calc());
         }
 
         public static FunctionBase operator -(Constant a, Constant b)
         {
-            return new Constant(a.Calc(0) * b.Calc(0));
+            return new Constant(a.Calc() * b.Calc());
         }
 
         public static FunctionBase operator +(Constant a, Constant b)
         {
-            return new Constant(a.Calc(0) * b.Calc(0));
+            return new Constant(a.Calc() * b.Calc());
         }
 
         public static FunctionBase operator /(Constant a, Constant b)
         {
-            return new Constant(a.Calc(0) / b.Calc(0));
+            return new Constant(a.Calc() / b.Calc());
         }
 
         public static FunctionBase operator *(double a, Constant b)
         {
-            return new Constant(a * b.Calc(0));
+            return new Constant(a * b.Calc());
         }
 
         public static FunctionBase operator -(double a, Constant b)
         {
-            return new Constant(a * b.Calc(0));
+            return new Constant(a * b.Calc());
         }
 
         public static FunctionBase operator +(double a, Constant b)
         {
-            return new Constant(a * b.Calc(0));
+            return new Constant(a * b.Calc());
         }
 
         public static FunctionBase operator /(double a, Constant b)
@@ -98,8 +98,30 @@ namespace Functions
                 throw new ArgumentException("Can't divide on zero");
             }
 
-            return new Constant(a / b.Calc(0));
+            return new Constant(a / b.Calc());
         }
 
+        public static FunctionBase operator *(Constant b, double a)
+        {
+            return (a*b);
+        }
+
+        public static FunctionBase operator -(Constant b, double a)
+        {
+            return new Constant(b.Calc() - a);
+        }
+
+        public static FunctionBase operator +(Constant b, double a)
+        {
+            return (a + b);
+        }
+
+        public static FunctionBase operator /(Constant a, double b)
+        {
+            if (Math.Abs(0 - b) < PredefinedConstants.MinComparedValue)
+                throw new ArgumentException("Can't divide on zero");
+
+            return new Constant(a.Calc() /b);
+        }
     }
 }

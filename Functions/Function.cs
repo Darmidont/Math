@@ -2,7 +2,7 @@
 
 namespace Functions
 {
-    public class Function : FunctionBase
+    public class Function : CalculatedFunc
     {
         public Function(double power = 1) : base(power)
         {            
@@ -14,7 +14,7 @@ namespace Functions
 
         public override FunctionBase Derivative()
         {
-            if (Math.Abs(1 - Power) < 0.01)
+            if (Math.Abs(1 - Power) < PredefinedConstants.MinComparedValue)
             {
                 return new Constant(Power);
             }
