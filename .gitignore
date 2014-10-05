@@ -1,0 +1,8 @@
+/FuncTest/bin/Debug/*.dll
+/FuncTest/bin/Debug
+/FuncTest/obj/Debug/*.cache
+/Functions/obj/Debug
+/MyMinSqureMethod/obj/Debug
+/FuncTest/obj/Debug
+/MyMinSqureMethod/bin/Debug
+/Functions/bin/Debug
