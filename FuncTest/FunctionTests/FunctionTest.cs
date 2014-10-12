@@ -36,7 +36,7 @@ namespace FuncTest.FunctionTests
         {
             var function = new Function(2, 4);
             var stringValueResult = function.ToString();
-            Assert.AreEqual(stringValueResult, "2 * x ^ 4");
+            Assert.AreEqual("2 * x ^ 4", stringValueResult);
         }
 
         [Test]
