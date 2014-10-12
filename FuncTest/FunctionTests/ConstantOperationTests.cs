@@ -27,50 +27,63 @@ namespace FuncTest.FunctionTests
         {
             var result = _constant + _dobleVal;
             Assert.AreEqual(result.GetType(), typeof(Constant));
-            
-            Assert.AreEqual(((Constant)result).Calc(), 6);
+            Assert.AreEqual(6, ((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantSubstractOperations()
         {
-            string dd = string.Empty;
+            var result = _constant - _dobleVal;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(2, ((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantMultipleOperations()
         {
+            var result = _constant * _dobleVal;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(8, ((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantDivideOperations()
         {
-
+            var result = _constant / _dobleVal;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(2, ((Constant)result).Calc());
         }
 
-        //
         [Test]
         public void ShouldReturnCorrectValueForConstantSumOperations1()
         {
-
+            var result =  _dobleVal +_constant;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(6, ((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantSubstractOperations1()
         {
-
+            var result = _dobleVal - _constant;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(-2, ((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantMultipleOperations1()
         {
-
+            var result = _dobleVal * _constant;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(8,((Constant)result).Calc());
         }
 
         [Test]
         public void ShouldReturnCorrectValueForConstantDivideOperations1()
         {
-
+            var result = _dobleVal / _constant;
+            Assert.AreEqual(result.GetType(), typeof(Constant));
+            Assert.AreEqual(0.5, ((Constant)result).Calc());
         }
     }
 }
