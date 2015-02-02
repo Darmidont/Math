@@ -16,7 +16,5 @@ namespace Functions
             leftFunc = left;
             rightFunc = right;
         }
-
-
     }
 }

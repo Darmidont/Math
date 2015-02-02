@@ -46,5 +46,14 @@ namespace FuncTest.FunctionTests
             var result = function.Calc(2);
             Assert.AreEqual(result, 24);
         }
+
+        [Test]
+        public void ShouldCalculateCorrectDerivate()
+        {
+            var function = new Function(2, 4);
+            var derivateFunc = function.Derivative();
+            Assert.AreEqual(derivateFunc.GetType(), typeof(Function));
+            Assert.AreEqual(derivateFunc.ToString(), "8 * x ^ 3");
+        }
 }
 }
